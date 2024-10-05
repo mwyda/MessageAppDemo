@@ -99,4 +99,8 @@ class Message(private var messageId: String, private var chatRoomId: String, pri
         return "Message(messageId='$messageId', chatRoomId='$chatRoomId', messageContent='$messageContent', messageAttachments=$messageAttachments)"
     }
 
+    fun addFileAttachment(fileList: ArrayList<File>) {
+        this.messageAttachments.addAll(fileList)
+    }
+
 }
