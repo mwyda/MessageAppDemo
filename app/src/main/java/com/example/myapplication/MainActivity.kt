@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
         var app = FirebaseApp.initializeApp(this)
         val database = Firebase.database.getReferenceFromUrl("https://messageappdemo-60375-default-rtdb.firebaseio.com/")
         var user: User = User(username = "michael", email = "test", hashedPassword = "123", salt = "123", firstName = "test", lastName = "mctesterson", birthDate = Date(55555), phoneNumber = "555")
-        database.child("User").child("-1").setValue(user)
+        database.child("User").child("-2").setValue(user)
         print(user)
     }
 }
