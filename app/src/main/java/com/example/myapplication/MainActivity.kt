@@ -11,7 +11,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.myapplication.login.User
 import com.example.myapplication.ui.theme.MyApplicationTheme
+import com.google.firebase.Firebase
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.database
+import java.util.Date
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +32,11 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+        var app = FirebaseApp.initializeApp(this)
+        val database = Firebase.database.getReferenceFromUrl("https://messageappdemo-60375-default-rtdb.firebaseio.com/")
+        var user: User = User(username = "michael", email = "test", hashedPassword = "123", salt = "123", firstName = "test", lastName = "mctesterson", birthDate = Date(55555), phoneNumber = "555")
+        database.child("User").child("-1").setValue(user)
+        print(user)
     }
 }
 

@@ -5,10 +5,10 @@ import android.provider.ContactsContract.CommonDataKinds.Phone
 import java.util.Date
 
 class User(private var userId:String = "-1",
-           private var username:String, private var email:Email,
+           private var username:String, private var email:String,
            private var hashedPassword:String, private var salt:String,
            private var firstName:String, private var lastName:String,
-           private var birthDate: Date, private var phoneNumber:Phone) {
+           private var birthDate: Date, private var phoneNumber:String) {
 
     fun getUserId():String {
         return this.userId
@@ -18,7 +18,7 @@ class User(private var userId:String = "-1",
         return this.username
     }
 
-    fun getEmail():Email {
+    fun getEmail(): String {
         return this.email
     }
 
@@ -42,7 +42,7 @@ class User(private var userId:String = "-1",
         return this.birthDate
     }
 
-    fun getPhoneNumber():Phone {
+    fun getPhoneNumber():String {
         return this.phoneNumber
     }
 
@@ -54,7 +54,7 @@ class User(private var userId:String = "-1",
         this.username = username
     }
 
-    fun setEmail(email: Email) {
+    fun setEmail(email: String) {
         this.email = email
     }
 
@@ -74,11 +74,11 @@ class User(private var userId:String = "-1",
         this.lastName = lastName
     }
 
-    fun setBirthdate(birthDate: Date) {
+    fun setBirthDate(birthDate: Date) {
         this.birthDate = birthDate
     }
 
-    fun setPhone(phoneNumber: Phone) {
+    fun setPhone(phoneNumber: String) {
         this.phoneNumber = phoneNumber
     }
 
@@ -117,6 +117,5 @@ class User(private var userId:String = "-1",
     override fun toString(): String {
         return "User(username='$username', email=$email, firstName='$firstName', lastName='$lastName', birthDate=$birthDate, phoneNumber=$phoneNumber)"
     }
-
 
 }
