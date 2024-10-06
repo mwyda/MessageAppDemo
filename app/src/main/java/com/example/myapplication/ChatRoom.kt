@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import java.util.Date
+import com.mysql.jdbc.Connection
 
 class ChatRoom(private var chatRoomId: String, private var longitude: String,
                private var latitude: String, private var startDate: Date,
